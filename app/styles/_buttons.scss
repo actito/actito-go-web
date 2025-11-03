@@ -1,0 +1,71 @@
+%basicbtn {
+  outline: 0;
+  text-transform: uppercase;
+  display: inline-block;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 2px;
+  padding: 1em 1.5em .9em 1.5em;
+  line-height: 1em;
+  font-family: $font-family;
+  text-decoration: none;
+  font-weight: bold;
+  &:focus {
+    @include box-shadow(none !important);
+    text-decoration: none;
+    border-style: solid !important;
+    border-width: 2px !important;
+  }
+  &:hover{
+    @include box-shadow(none !important);
+    text-decoration: none;
+    border-style: solid !important;
+    border-width: 2px !important;
+  }
+
+}
+
+%basicanim {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: background-color .2s ease;
+}
+
+.btn{
+  @extend %basicbtn;
+  @extend %basicanim;
+
+  &.btn-xs{
+    padding: .8em 1.3em .7em 1.3em !important;
+    font-size: 12px;
+    &.icon-right{
+      padding: .9em .3em .8em 1.4em !important;
+    }
+  }
+
+  &.btn-sm{
+    padding: .9em 1.4em .8em 1.4em !important;
+    font-size: 14px;
+    &.icon-right{
+      padding: .9em .4em .8em 1.4em !important;
+    }
+  }
+  &.btn-lg{
+    padding: 1.1em 1.6em 1em 1.6em;
+    &.icon-right{
+      padding: .9em .6em .8em 1.4em !important;
+    }
+  }
+
+  svg{
+    margin-right: 10px;
+  }
+
+  &.icon-right{
+    svg{
+      margin-left: 10px;
+    }
+  }
+
+}

@@ -1,0 +1,31 @@
+.error{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .error-area{
+    width: 420px;
+    max-width: 90%;
+    padding: 15px;
+    margin: auto;
+
+    .logo{
+      display: block;
+      max-width: 300px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+
+    .error-box{
+      width: 100%;
+
+    }
+
+    .back-link{
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}

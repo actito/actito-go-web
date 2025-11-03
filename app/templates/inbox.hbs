@@ -1,0 +1,40 @@
+{{page-title (t "inbox.title")}}
+<Breadcrumb
+  @items={{array (hash route="home" title=(t "home.title")) (hash route="settings" title=(t "settings.title"))}}
+  @current={{t "inbox.title"}}
+/>
+<h1 class="mt-3">{{t "inbox.title"}}</h1>
+
+<div class="inbox-list-area">
+  {{#if @model.length}}
+    <div class="inbox-list-options">
+      <BsDropdown as |dd|>
+        <dd.button>
+          <FaIcon @icon="ellipsis-vertical" />
+        </dd.button>
+        <dd.menu as |menu|>
+          <menu.item>
+            <a class="dropdown-item" href="" {{on "click" this.markAllRead}}>{{t "inbox.options.markAllRead"}}</a>
+          </menu.item>
+          <menu.item>
+            <a class="dropdown-item" href="" {{on "click" this.deleteAll}}>{{t "inbox.options.deleteAll"}}</a>
+          </menu.item>
+        </dd.menu>
+      </BsDropdown>
+    </div>
+  {{/if}}
+  <div class="inbox-list list-group">
+    {{#each @model as |item|}}
+      <div class="list-group-item position-relative p-0">
+        <a href="" class="remove-item bg-body-secondary z-2" {{on "click" (fn this.removeInboxItem item)}}>&times;</a>
+        <a href="" {{on "click" (fn this.openInboxItem item)}} class="inbox-item">
+          <Inbox::Row
+            @item={{item}}
+          />
+        </a>
+      </div>
+    {{else}}
+      <Inbox::NoData />
+    {{/each}}
+  </div>
+</div>
