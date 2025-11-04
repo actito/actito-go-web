@@ -9,7 +9,6 @@ module.exports = function (defaults) {
     fingerprint: {
       exclude: [
         'robots.txt',
-        'assets/images/no-gravatar.png',
         'assets/images/no-gravatar-blue.png',
         'assets/icons/android-icon-36x36.png',
         'assets/icons/android-icon-48x48.png',
