@@ -1,0 +1,24 @@
+registered:
+  title: "Welcome {user}"
+anonymous:
+  title: "You are anonymous!"
+  text: "Click the button to create a user profile."
+  button: "Create User"
+modalUser:
+  title: "Create User"
+  text: "Please provide a userId and userName to create a profile"
+  form:
+    userId:
+      label: "userId"
+      placeholder: "Type a value"
+      error: "Please type a value"
+      invalid: "Please type a valid userId (a-zA-Z0-9_-)"
+    userName:
+      label: "userName"
+      placeholder: "Type a name"
+      error: "Please type a name"
+  buttons:
+    cancel: "Cancel"
+    create: "Create"
+  alerts:
+    error: "Failed! Could not create user profile. Try again later."

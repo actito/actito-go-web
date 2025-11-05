@@ -1,0 +1,23 @@
+title: "Settings"
+inbox:
+  title: "Inbox"
+notifications:
+  title: "Notifications"
+  text: "Allow us to send remote notifications even when you are not using this app"
+dnd:
+  title: "Do not disturb"
+  text: "Configure a period of time when notifications shouldn't generate alerts in your device's notification center"
+  start: "From"
+  end: "To"
+location:
+  title: "Location"
+  text: "Allow us to track your locations to show you content where it's most relevant"
+tags:
+  title: "Subscribe to Topics"
+  topics:
+    topic_announcements: "Announcements & Events"
+    topic_best_practices: "Best Practices"
+    topic_product_updates: "Product Updates"
+    topic_engineering: "Engineering & Technology"
+    topic_staff: "Staff & Experiences"
+    topic_marketing: "Marketing & Sales"

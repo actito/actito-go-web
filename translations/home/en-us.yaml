@@ -1,0 +1,11 @@
+title: "Home"
+intro:
+  title: "Welcome to the Actito Go app"
+  text: "Here you can play around with all the functionalities provided by the Actito platform."
+topProducts:
+  title: "Top Products"
+  link: "Browse more"
+customEvents:
+  title: "Custom Events"
+  text: "See how actionable analytics can transform your messaging strategy. Manually log events by setting up its name and data attributes."
+  link: "Try it!"

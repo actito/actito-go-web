@@ -1,0 +1,28 @@
+{{page-title (t "cart.title")}}
+<Breadcrumb
+  @items={{array (hash route="home" title=(t "home.title"))}}
+  @current={{t "cart.title"}}
+/>
+<h1 class="mt-3">{{t "cart.title"}}</h1>
+<p>{{t "cart.text"}}</p>
+
+<Cart::List>
+  {{#each this.cart.items as |item|}}
+    <li class="list-group-item">
+      <a href="" class="remove-item bg-body-secondary" {{on "click" (fn this.removeItem item)}}>&times;</a>
+      <Cart::Row @item={{item}} />
+    </li>
+  {{else}}
+    <li class="list-group-item">
+      <Cart::NoData />
+    </li>
+  {{/each}}
+</Cart::List>
+
+<Cart::Total @total={{this.cart.total}} />
+
+{{#if this.cart.items}}
+  <div class="d-grid col-md-6 mx-auto">
+    <button {{on "click" this.purchase}} type="button" class="btn btn-primary"><FaIcon @icon="credit-card"/> Purchase</button>
+  </div>
+{{/if}}

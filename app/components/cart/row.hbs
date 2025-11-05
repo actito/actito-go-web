@@ -1,0 +1,10 @@
+<div
+  class='cart-row d-flex justify-content-between align-items-start'
+  ...attributes
+>
+  <img src='{{@item.image}}' class='cart-row-image' alt={{@item.title}} />
+  <div class='ms-2 me-auto'>
+    <div class='fw-bold'>{{@item.title}}</div>
+    {{concat '€' @item.price}}
+  </div>
+</div>

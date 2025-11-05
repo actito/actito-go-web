@@ -1,0 +1,46 @@
+.inbox-list-area{
+  position: relative;
+  .inbox-list-options{
+    position: absolute;
+    top: -30px;
+    right: 0;
+    z-index: 3;
+    .dropdown-toggle{
+      padding: 0 !important;
+      font-size: 22px !important;
+      background: transparent !important;
+      color: $black;
+      border: none !important;
+      &:after{
+        display: none;
+      }
+    }
+    .dropdown-menu{
+      top: 30px;
+      right: 0;
+    }
+  }
+  .inbox-list{
+    position: relative;
+    .inbox-item{
+      display: block;
+      text-decoration: none;
+      color: $black;
+    }
+  }
+}
+
+@include color-mode(dark) {
+  .inbox-list-area{
+    .inbox-list-options {
+      .dropdown-toggle {
+        color: $white;
+      }
+    }
+    .inbox-list {
+      .inbox-item{
+        color: $white;
+      }
+    }
+  }
+}

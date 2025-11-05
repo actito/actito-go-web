@@ -1,0 +1,24 @@
+title: "Custom Events"
+text: "Use the form below to create custom events. These events do not only provide insights for your business, they also can transform the way you automate your transactional messages."
+form:
+  name:
+    label: "Event name"
+    placeholder: "Type a name"
+    error: "Please type a valid name"
+  attributes:
+    label: "Attributes"
+    noData: "No attributes added yet."
+    addOne: "Add one?"
+    addAnother: "Add another attribute"
+    key:
+      label: "Key"
+      placeholder: "Type a key"
+      error: "Please type a valid key"
+    value:
+      label: "Value"
+      placeholder: "Type a value"
+      error: "Please type a value"
+  button: "Log custom event"
+  alerts:
+    success: "Done! Event created successfully"
+    error: "Failed! Event could not be created. Try again later."

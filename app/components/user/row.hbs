@@ -1,0 +1,97 @@
+<div class="list-group mb-5">
+  {{#if @device.userId}}
+    <LinkTo @route="user" class="list-group-item list-group-item-action p-0">
+      <div class="user-row">
+        <Gravatar
+          class="user-row-image me-2"
+          @userId={{@device.userId}}
+          @size="300"
+        />
+        <div class="ms-2 me-auto">
+          <h4 class="text-truncate">{{@device.userName}}</h4>
+          <p class="mb-0 text-truncate">{{@device.userId}}</p>
+        </div>
+        <FaIcon class="ms-2 text-body-tertiary" @icon="chevron-right" />
+      </div>
+    </LinkTo>
+  {{else}}
+    <div class="list-group-item p-0">
+      <div class="user-row anonymous">
+        <div class="ms-2 me-auto">
+          <h4>{{t "components.user.anonymous.title"}}</h4>
+          <p class="mb-0">{{t "components.user.anonymous.text"}}</p>
+        </div>
+        <button {{on "click" (fn (mut this.modalUser true))}} type="button" class="btn btn-primary">{{t "components.user.anonymous.button"}}</button>
+      </div>
+    </div>
+  {{/if}}
+</div>
+
+
+<BsModal
+  @size="lg"
+  @open={{this.modalUser}}
+  @position="center"
+  @closeButton={{true}}
+  @backdrop={{true}}
+  @backdropClose={{true}}
+  @keyboard={{true}}
+  @renderInPlace={{true}}
+  as |modal|>
+  <modal.header>
+    <h2 class="modal-title">
+      {{t "components.user.modalUser.title"}}
+    </h2>
+  </modal.header>
+  <modal.body>
+
+    <p>{{t "components.user.modalUser.text"}}</p>
+
+    {{#if this.hasServerError}}
+      <div class="alert alert-danger" role="alert">
+        {{t "components.user.modalUser.alerts.error"}}
+      </div>
+    {{/if}}
+
+    <div class="mb-3">
+      <label for="userId" class="form-label">{{t "components.user.modalUser.form.userId.label"}}</label>
+      <Input
+        id="userId"
+        class="form-control {{if this.error.userId "is-invalid"}}"
+        @type="text"
+        @value={{this.userId}}
+        placeholder={{t "components.user.modalUser.form.userId.placeholder"}}
+        required={{true}}
+      />
+      {{#if this.error.userId}}
+        <div class="invalid-feedback">
+          {{this.error.userId}}
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="mb-1">
+      <label for="userName" class="form-label">{{t "components.user.modalUser.form.userName.label"}}</label>
+      <Input
+        id="userName"
+        class="form-control {{if this.error.userName "is-invalid"}}"
+        @type="text"
+        @value={{this.userName}}
+        placeholder={{t "components.user.modalUser.form.userName.placeholder"}}
+        required={{true}}
+      />
+      {{#if this.error.userName}}
+        <div class="invalid-feedback">
+          {{this.error.userName}}
+        </div>
+      {{/if}}
+    </div>
+
+  </modal.body>
+  <modal.footer>
+    <button class="btn btn-sm btn-secondary" type="button" {{action modal.close}}>{{t "components.user.modalUser.buttons.cancel"}}</button>
+    <button {{on "click" this.registerDevice}} class="btn btn-sm btn-primary" type="button" disabled={{this.isProcessing}}>
+      {{#if this.isProcessing}}<FaIcon @icon="circle-notch" @spin={{true}} @size="sm" />{{/if}}{{t "components.user.modalUser.buttons.create"}}
+    </button>
+  </modal.footer>
+</BsModal>

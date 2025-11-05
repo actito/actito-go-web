@@ -1,0 +1,18 @@
+<div class="inbox-row" ...attributes>
+  {{#unless @item.opened}}
+    <div class="inbox-row-opened bg-danger me-2"></div>
+  {{/unless}}
+  {{#if @item.notification.attachments}}
+    <img class="inbox-row-attachment me-1" src={{get (get @item.notification.attachments 0) "uri"}} alt="">
+  {{/if}}
+  <div class="ms-2 me-auto text-truncate">
+    <small class="mb-2 d-block">{{moment-format @item.time "MMMM Do YYYY HH:mm"}}</small>
+    {{#if @item.notification.title}}
+      <h5>{{@item.notification.title}}</h5>
+    {{/if}}
+    {{#if @item.notification.subtitle}}
+      <h6>{{@item.notification.subtitle}}</h6>
+    {{/if}}
+    <p class="mb-0">{{@item.notification.message}}</p>
+  </div>
+</div>

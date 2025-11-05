@@ -1,0 +1,25 @@
+<div class="tabs bg-body-tertiary shadow-sm" ...attributes>
+  <div class="buttons">
+    <LinkTo class="button" @route="home">
+      <FaIcon @icon="house" />
+      <div class="button-text">
+        {{t "components.tabs.home"}}
+      </div>
+    </LinkTo>
+    <LinkTo class="button" @route="cart">
+      <span class="position-relative">
+        <FaIcon @icon="cart-shopping" />
+        <Cart::Badge @items={{this.cart.items}} />
+      </span>
+      <div class="button-text">
+        {{t "components.tabs.cart"}}
+      </div>
+    </LinkTo>
+    <LinkTo class="button" @route="settings">
+      <FaIcon @icon="gear" />
+      <div class="button-text">
+        {{t "components.tabs.settings"}}
+      </div>
+    </LinkTo>
+  </div>
+</div>
