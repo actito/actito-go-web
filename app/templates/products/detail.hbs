@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-6">
       <div class="card-body">
-        <p class="card-text">{{@model.description}}</p>
+        <p class="card-text">{{html-safe-string @model.description}}</p>
         <p class="card-text"><h5 class="text-body-secondary">{{concat "€" @model.price}}</h5></p>
         <button {{on "click" this.addToCart}} type="button" class="btn btn-primary"><FaIcon @icon="cart-plus"/> Add to Cart</button>
       </div>
