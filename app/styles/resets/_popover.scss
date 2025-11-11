@@ -1,0 +1,14 @@
+.popover{
+  border: 1px solid theme-color("light") !important;
+  .popover-body{
+    font-family: $font-family !important;
+    font-size: 14px !important;
+    color: theme-color("primary") !important;
+    @include box-shadow(0 0 0.25rem rgb(0 0 0 / 8%) !important);
+  }
+  .arrow {
+    &:before {
+      border-left-color: theme-color("light") !important;
+    }
+  }
+}

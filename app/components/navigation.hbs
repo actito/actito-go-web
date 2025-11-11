@@ -1,0 +1,46 @@
+<div class="navigation bg-body-tertiary shadow-sm" ...attributes>
+  <div class="container">
+    <div class="nav-area">
+      <div class="logo">
+        <LinkTo @route="home">
+          <img
+            src={{if
+              (eq this.theme "light")
+              "/assets/images/logo-actito-color.png"
+              "/assets/images/logo-actito-white.png"
+            }}
+            alt=""
+          />
+        </LinkTo>
+      </div>
+      <div class="buttons">
+        <LinkTo class="button desktop link-offset-3" @route="home">
+          {{t "components.navigation.buttons.home"}}
+        </LinkTo>
+        <LinkTo class="button desktop link-offset-3" @route="products">
+          {{t "components.navigation.buttons.products"}}
+        </LinkTo>
+        <LinkTo class="button desktop link-offset-3" @route="settings">
+          {{t "components.navigation.buttons.settings"}}
+        </LinkTo>
+        <LinkTo class="button desktop link-offset-3" @route="cart">
+          <FaIcon @icon="cart-shopping" />
+          <Cart::Badge @items={{this.cart.items}} />
+        </LinkTo>
+        {{#if (eq this.theme "light")}}
+          <a
+            href=""
+            {{on "click" (fn this.changeTheme "dark")}}
+            class="button"
+          ><FaIcon @icon="moon" /></a>
+        {{else}}
+          <a
+            href=""
+            {{on "click" (fn this.changeTheme "light")}}
+            class="button"
+          ><FaIcon @icon="sun" /></a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

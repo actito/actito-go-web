@@ -1,0 +1,87 @@
+{{page-title (t "events.title")}}
+<nav class="mt-3 mb-3" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><LinkTo class="link-offset-2" @route="home">{{t "home.title"}}</LinkTo></li>
+    <li class="breadcrumb-item active" aria-current="page">{{t "events.title"}}</li>
+  </ol>
+</nav>
+
+<h1 class="mt-3">{{t "events.title"}}</h1>
+<p>{{t "events.text"}}</p>
+
+{{#if this.isSuccess}}
+  <div class="alert alert-success" role="alert">
+    {{t "events.form.alerts.success"}}
+  </div>
+{{/if}}
+
+{{#if this.hasServerError}}
+  <div class="alert alert-danger" role="alert">
+    {{t "events.form.alerts.error"}}
+  </div>
+{{/if}}
+
+<form class="row g-2" {{on "submit" this.logEvent}}>
+  <div class="mb-0">
+    <label for="eventName" class="form-label">{{t "events.form.name.label"}}</label>
+    <Input
+      id="eventName"
+      class="form-control"
+      @type="text"
+      @value={{this.eventName}}
+      placeholder={{t "events.form.name.placeholder"}}
+      required={{true}}
+      pattern="[a-zA-Z0-9]([a-zA-Z0-9_-]+[a-zA-Z0-9])?"
+    />
+  </div>
+
+  <ul class="list-group p-1">
+    {{#each this.eventData as |field|}}
+      <li class="list-group-item position-relative">
+        <a href="" class="remove-item bg-body-secondary" {{on "click" (fn this.removeAttribute field)}}>&times;</a>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="eventName" class="form-label">{{t "events.form.attributes.key.label"}}</label>
+              <Input
+                id="eventName"
+                class="form-control"
+                @type="text"
+                @value={{field.key}}
+                placeholder={{t "events.form.attributes.key.placeholder"}}
+                required={{true}}
+                pattern="[A-Za-z0-9_]+"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="eventName" class="form-label">{{t "events.form.attributes.value.label"}}</label>
+              <Input
+                id="eventName"
+                class="form-control"
+                @type="text"
+                @value={{field.value}}
+                placeholder={{t "events.form.attributes.value.placeholder"}}
+                required={{true}}
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+    {{else}}
+      <li class='list-group-item d-flex justify-content-center align-items-center'>
+        <div class='fw-bold mt-5 mb-5'>{{t 'events.form.attributes.noData'}} <a class="link-offset-2" href="" {{on "click" this.addAttribute}}>{{t 'events.form.attributes.addOne'}}</a></div>
+      </li>
+    {{/each}}
+  </ul>
+  {{#if this.eventData}}
+    <div class="text-end mb-3">
+      <a class="link-offset-2" href="" {{on "click" this.addAttribute}}>{{t 'events.form.attributes.addAnother'}}</a>
+    </div>
+  {{/if}}
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">{{t "events.form.button"}}</button>
+  </div>
+</form>

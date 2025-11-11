@@ -1,0 +1,77 @@
+.add-to-home{
+  position: fixed;
+  width: 100%;
+  z-index: 1500;
+  bottom: -20px;
+  .banner{
+    position: relative;
+    border: 5px solid $body-bg;
+    padding: 10px 15px;
+    background: $body-bg;
+    max-width: 400px;
+    width: 90vw;
+    margin: 2em auto;
+    text-align: center;
+    @include border-radius(10px);
+    &::before{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0px;
+      left: 50%;
+      bottom: 0;
+      border: 15px solid transparent;
+      border-bottom: 0;
+      border-top: 15px solid $body-bg;
+      transform: translate(-50%, calc(100% + 5px));
+    }
+    .text{
+      font-size: 14px;
+      font-weight: 600;
+    }
+    svg{
+      width: 30px;
+      color: $body-color;
+    }
+    .close-button{
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      font-weight: bold;
+      font-size: 20px;
+      @include border-radius(100%);
+      background: $body-bg;
+      color: $body-color;
+      line-height: 1;
+      z-index: 1;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+    }
+  }
+}
+
+
+@include color-mode(dark) {
+  .add-to-home {
+    .banner{
+      border: 5px solid $body-bg-dark;
+      background: $body-bg-dark;
+      &::before{
+        border-top: 15px solid $body-bg-dark;
+      }
+      svg{
+        color: $body-color-dark;
+      }
+      .close-button{
+        background: $body-bg-dark;
+        color: $body-color-dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{{page-title (t "home.title")}}
+
+<BsCarousel
+  @autoPlay={{true}}
+  @wrap={{true}}
+  @index={{0}}
+  @interval={{5000}}
+  @keyboard={{true}}
+  @ltr={{true}}
+  @pauseOnMouseEnter={{true}}
+  @showControls={{false}}
+  @showIndicators={{false}}
+  as |car|>
+  {{#each this.slides as |slide|}}
+    <car.slide>
+      <img alt={{slide.alt}} src={{slide.src}} style="max-width: 100%;">
+    </car.slide>
+  {{/each}}
+</BsCarousel>
+
+<h1 class="mt-5">{{t "home.intro.title"}}</h1>
+<p>{{t "home.intro.text"}}</p>
+
+<h2 class="mt-5">{{t "home.topProducts.title"}}</h2>
+<div class="row">
+  {{#each @model as |product|}}
+    <div class="col-md-3">
+      <LinkTo class="minimal-link" @route="products.detail" @model={{product}}>
+        <Product::Card
+          @product={{product}}
+        />
+      </LinkTo>
+    </div>
+  {{/each}}
+</div>
+<div class="text-end">
+  <LinkTo class="link-offset-2" @route="products.index">{{t "home.topProducts.link"}}</LinkTo>
+</div>
+
+<div class="card bg-body-tertiary mt-5 mb-3">
+  <div class="card-header">{{t "home.customEvents.title"}}</div>
+  <div class="card-body">
+    <p class="card-text">{{t "home.customEvents.text"}}</p>
+    <LinkTo @route="events" class="card-link link-offset-2">{{t "home.customEvents.link"}}</LinkTo>
+  </div>
+</div>

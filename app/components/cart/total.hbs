@@ -1,0 +1,8 @@
+<div class='cart-total clearfix mt-3 mb-5' ...attributes>
+  {{#if @total}}
+    <div class="float-end">
+      {{t 'components.cart.total'}}
+      <span class='amount'>{{concat '€' @total}}</span>
+    </div>
+  {{/if}}
+</div>
