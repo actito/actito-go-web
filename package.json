@@ -1,6 +1,6 @@
 {
   "name": "actito-go-web",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "description": "Actito's Go Web app",
   "repository": "https://github.com/Actito/actito-go-web",
@@ -37,7 +37,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
-    "actito-web": "^5.0.0-beta.1",
+    "actito-web": "^5.0.0-beta.2",
     "blueimp-md5": "^2.19.0",
     "bootstrap": "^5.3.1",
     "broccoli-asset-rev": "^3.0.0",
