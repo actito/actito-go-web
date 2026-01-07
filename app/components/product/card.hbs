@@ -2,7 +2,7 @@
   <img src="{{default-value @product.image "https://placehold.co/600x300?text=No+Preview"}}" class="card-img-top" alt="" />
   <div class="card-body">
     <h5 class="card-title">{{@product.title}}</h5>
-    <p class="card-text text-truncate">{{@product.description}}</p>
+    <p class="card-text text-truncate">{{strip-html @product.description}}</p>
   </div>
   <div class="card-footer text-body-secondary">
     <div class="price">{{concat "€" @product.price}}</div>
