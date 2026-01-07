@@ -26,11 +26,9 @@
     <div class="ms-2 me-auto">
       <FaIcon class="me-2" @icon="bell" /> {{t "settings.notifications.title"}}
     </div>
-    <XToggle
-      @theme="light"
-      @size="small"
+    <Switch
       @value={{this.allowedUI}}
-      @onToggle={{this.changeNotifications}}
+      @onChange={{this.changeNotifications}}
     />
   </li>
 </ul>
@@ -41,11 +39,9 @@
     <div class="ms-2 me-auto">
       <FaIcon class="me-2" @icon="bed" /> {{t "settings.dnd.title"}}
     </div>
-    <XToggle
-      @theme="light"
-      @size="small"
+    <Switch
       @value={{this.allowedDnd}}
-      @onToggle={{this.changeDnd}}
+      @onChange={{this.changeDnd}}
     />
   </li>
   {{#if this.allowedDnd}}
@@ -80,11 +76,9 @@
     <div class="ms-2 me-auto">
       <FaIcon class="me-2" @icon="location-arrow" /> {{t "settings.location.title"}}
     </div>
-    <XToggle
-      @theme="light"
-      @size="small"
+    <Switch
       @value={{this.allowedLocation}}
-      @onToggle={{this.changeLocation}}
+      @onChange={{this.changeLocation}}
     />
   </li>
 </ul>
@@ -97,11 +91,9 @@
       <div class="ms-2 me-auto">
         {{t (concat "settings.tags.topics." key)}}
       </div>
-      <XToggle
-        @theme="light"
-        @size="small"
+      <Switch
         @value={{value}}
-        @onToggle={{fn this.changeTag key}}
+        @onChange={{fn this.changeTag key}}
       />
     </li>
   {{/each-in}}

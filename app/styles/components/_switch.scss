@@ -1,0 +1,20 @@
+.switch {
+  .form-check-input {
+    cursor: pointer;
+    margin-left: 0;
+    width: 2.4em;
+    height: 1.3em;
+    margin-top: 0;
+    background-color: #6c757d;
+    border: 0;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28255, 255, 255, 1%29'/%3e%3c/svg%3e");
+  }
+  .form-check-input:checked {
+    background-color: #198754;
+    border: 0;
+  }
+}
+
+.switch.form-check {
+  margin-bottom: 0;
+}

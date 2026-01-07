@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import EmberObject, { action } from '@ember/object';
 import { restartableTask, timeout } from 'ember-concurrency';
@@ -146,18 +146,19 @@ export default class SettingsController extends Controller {
     }
   }
 
-  @restartableTask
-  *updateDnd() {
+  updateDnd = restartableTask(async () => {
     if (this.dnd.get('start') && this.dnd.get('end')) {
-      yield timeout(500);
+      await timeout(500);
       try {
-        yield this.actito.updateDoNotDisturb({
+        await this.actito.updateDoNotDisturb({
           start: this.dnd.get('start'),
           end: this.dnd.get('end'),
         });
-      } catch (e) {}
+      } catch (e) {
+        console.error(`It was not possible to update the "Do not disturb" status:\n\n${e}`);
+      }
     }
-  }
+  })
 
   dismissAlert() {
     this.dismissTimeout = setTimeout(
