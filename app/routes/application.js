@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
+import { formats } from '../ember-intl';
 
 export default class ApplicationRoute extends Route {
   @service intl;
@@ -7,7 +8,8 @@ export default class ApplicationRoute extends Route {
   @service router;
 
   async beforeModel() {
-    this.intl.setLocale(['en-us']);
+    this.setupIntl();
+
     this.handleTheme();
     try {
       await this.actito.configure();
@@ -34,5 +36,10 @@ export default class ApplicationRoute extends Route {
       document.documentElement.setAttribute('data-bs-theme', theme);
       document.documentElement.setAttribute('data-actito-theme', theme);
     }
+  }
+
+  setupIntl() {
+    this.intl.setFormats(formats);
+    this.intl.setLocale(['en-us']);
   }
 }
