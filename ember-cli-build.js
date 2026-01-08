@@ -22,6 +22,7 @@ module.exports = async function (defaults) {
     'ember-bootstrap': {
       bootstrapVersion: 5,
       importBootstrapCSS: false,
+      insertEmberWormholeElementToDom: false,
     },
     babel: {
       plugins: [
