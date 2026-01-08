@@ -74,7 +74,7 @@
     "ember-cli-babel": "^8.2.0",
     "ember-cli-deploy": "^2.0.0",
     "ember-cli-deploy-build": "^3.0.0",
-    "ember-cli-deploy-cloudfront": "^5.0.0",
+    "ember-cli-deploy-cloudfront": "^6.0.0",
     "ember-cli-deploy-manifest": "^3.0.0",
     "ember-cli-deploy-s3": "^4.0.4",
     "ember-cli-deploy-status-json": "^1.1.0",
