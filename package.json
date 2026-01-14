@@ -78,7 +78,7 @@
     "ember-cli-deploy-manifest": "^3.0.0",
     "ember-cli-deploy-s3": "^5.0.1",
     "ember-cli-deploy-status-json": "^1.1.0",
-    "ember-cli-deprecation-workflow": "^3.4.0",
+    "ember-cli-deprecation-workflow": "^4.0.0",
     "ember-cli-moment-shim": "^3.8.0",
     "ember-cli-sass": "^11.0.1",
     "ember-concurrency": "^4.0.6",
