@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
 import { formats } from '../ember-intl';
+import translationsForEnUs from 'virtual:ember-intl/translations/en-us';
 
 export default class ApplicationRoute extends Route {
   @service intl;
@@ -39,6 +40,7 @@ export default class ApplicationRoute extends Route {
   }
 
   setupIntl() {
+    this.intl.addTranslations('en-us', translationsForEnUs)
     this.intl.setFormats(formats);
     this.intl.setLocale(['en-us']);
   }
