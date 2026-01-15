@@ -15,9 +15,6 @@
 /testem.log
 /yarn-error.log
 
-# generated service worker
-public/sw.js
-
 # ember-try
 /.node_modules.ember-try/
 /npm-shrinkwrap.json.ember-try
