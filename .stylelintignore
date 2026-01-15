@@ -3,3 +3,7 @@
 
 # compiled output
 /dist/
+/tmp/
+
+# animate css
+/app/styles/_animate.scss
