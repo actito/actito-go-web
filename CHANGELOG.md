@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Upcoming Release
+
+- Upgrade the app from Ember 4 to Ember 6 and update dependencies to their latest versions
+
 ## 2.0.1
 
 - Load the assets HTML description properly, stripping out every HTML tag.

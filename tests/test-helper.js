@@ -1,8 +1,18 @@
-import Application from '../app';
-import config from '../config/environment';
+import Application from 'actito-go-web/app';
+import config from 'actito-go-web/config/environment';
+import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
-import { start } from 'ember-qunit';
+import { setup } from 'qunit-dom';
+import {
+  start as qunitStart,
+  setupEmberOnerrorValidation
+} from 'ember-qunit';
 
-setApplication(Application.create(config.APP));
+export function start() {
+  setApplication(Application.create(config.APP));
 
-start();
+  setup(QUnit.assert);
+  setupEmberOnerrorValidation();
+
+  qunitStart();
+}

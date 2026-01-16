@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import md5 from 'blueimp-md5';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 
 export default class GravatarComponent extends Component {
   @service constants;

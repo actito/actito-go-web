@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { action } from '@ember/object';
 
 export default class AddToHomeComponent extends Component {
@@ -24,10 +24,8 @@ export default class AddToHomeComponent extends Component {
   }
 
   get isPhoneOrTablet() {
-    return (
-      typeof navigator !== 'undefined' &&
-      navigator.userAgent.match(/ipad|iphone/i)
-    );
+    return typeof navigator !== 'undefined' &&
+    navigator.userAgent.match(/ipad|iphone/i);
   }
 
   get isEligible() {
