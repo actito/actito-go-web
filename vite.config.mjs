@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { extensions, classicEmberSupport, ember } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 import { loadTranslations } from '@ember-intl/vite';
-import { VitePWA } from 'vite-plugin-pwa';
+import { build } from 'esbuild';
 
 export default defineConfig({
   server: {
@@ -17,17 +17,16 @@ export default defineConfig({
       extensions,
     }),
     loadTranslations(),
-    VitePWA({
-      strategies: 'injectManifest',
-      srcDir: 'worker',
-      filename: 'sw.js',
-      injectRegister: false,
-      injectManifest: {
-        injectionPoint: undefined
+    {
+      name: 'compile-sw',
+      async buildStart() {
+        await build({
+          entryPoints: ['worker/sw.js'],
+          outfile: 'public/sw.js',
+          bundle: true,
+          minify: true,
+        });
       },
-      devOptions: {
-        enabled: true,
-      }
-    })
+    },
   ],
 });
