@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import EmberObject, { action } from '@ember/object';
 import { restartableTask, timeout } from 'ember-concurrency';
@@ -52,13 +52,14 @@ export default class UserController extends Controller {
     }
   }
 
-  @restartableTask
-  *updateUserDataFields() {
-    yield timeout(500);
+  updateUserDataFields = restartableTask( async () => {
+    await timeout(500);
     try {
-      yield this.actito.updateUserData(this.sanitizeOutputValues());
-    } catch (e) {}
-  }
+      await this.actito.updateUserData(this.sanitizeOutputValues());
+    } catch (e) {
+      console.error(`It was not possible to update the user data fields:\n\n${e}`);
+    }
+  });
 
   sanitizeInputValues(field, userData) {
     let v = userData[field.key],
