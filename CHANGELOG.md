@@ -3,6 +3,7 @@
 ## Upcoming Release
 
 - Upgrade the app from Ember 4 to Ember 6 and update dependencies to their latest versions
+- Fix switch animations in the "Subscribe to topics" section
 
 ## 2.0.1
 
