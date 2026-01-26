@@ -86,17 +86,17 @@
 
 <h6 class="text-uppercase">{{t "settings.tags.title"}}</h6>
 <ul class="list-group mb-5">
-  {{#each-in this.tags as |key value|}}
+  {{#each this.tags as |tag|}}
     <li class="list-group-item d-flex justify-content-between align-items-start p-3">
       <div class="ms-2 me-auto">
-        {{t (concat "settings.tags.topics." key)}}
+        {{t (concat "settings.tags.topics." tag.id)}}
       </div>
       <Switch
-        @value={{value}}
-        @onChange={{fn this.changeTag key}}
+        @value={{tag.active}}
+        @onChange={{fn this.changeTag tag}}
       />
     </li>
-  {{/each-in}}
+  {{/each}}
 </ul>
 
 <div class="text-center">
