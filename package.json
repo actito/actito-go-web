@@ -61,7 +61,7 @@
     "@glimmer/tracking": "^1.1.2",
     "@rollup/plugin-babel": "^6.1.0",
     "@warp-drive/ember": "^5.8.0",
-    "actito-web": "^5.0.0-beta.2",
+    "actito-web": "^5.0.0-beta.3",
     "babel-plugin-ember-template-compilation": "^4.0.0",
     "blueimp-md5": "^2.19.0",
     "bootstrap": "^5.3.8",
