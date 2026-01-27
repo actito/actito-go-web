@@ -1,8 +1,9 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import EmberObject, { action } from '@ember/object';
 import { restartableTask, timeout } from 'ember-concurrency';
+import { A } from '@ember/array';
 
 export default class SettingsController extends Controller {
   @service constants;
@@ -20,11 +21,12 @@ export default class SettingsController extends Controller {
   async changeTag(tag, state) {
     try {
       if (state) {
-        await this.actito.addTags([tag]);
+        await this.actito.addTags([tag.id]);
       } else {
-        await this.actito.removeTag(tag);
+        await this.actito.removeTag(tag.id);
       }
-      this.tags.set(tag, state);
+
+      tag.set('active', state);
     } catch (e) {}
   }
 
@@ -73,14 +75,14 @@ export default class SettingsController extends Controller {
   }
 
   onResetController() {
-    this.tags = EmberObject.create({
-      topic_announcements: false,
-      topic_best_practices: false,
-      topic_product_updates: false,
-      topic_marketing: false,
-      topic_engineering: false,
-      topic_staff: false,
-    });
+    this.tags = A([
+      EmberObject.create({ id: 'topic_announcements', active: false }),
+      EmberObject.create({ id: 'topic_best_practices', active: false }),
+      EmberObject.create({ id: 'topic_product_updates', active: false }),
+      EmberObject.create({ id: 'topic_marketing', active: false }),
+      EmberObject.create({ id: 'topic_engineering', active: false }),
+      EmberObject.create({ id: 'topic_staff', active: false }),
+    ]);
   }
 
   onControllerLoaded() {
@@ -96,21 +98,11 @@ export default class SettingsController extends Controller {
   async loadTags() {
     try {
       let result = await this.actito.fetchTags();
-      this.tags.set(
-        'topic_announcements',
-        result.includes('topic_announcements')
-      );
-      this.tags.set(
-        'topic_best_practices',
-        result.includes('topic_best_practices')
-      );
-      this.tags.set(
-        'topic_product_updates',
-        result.includes('topic_product_updates')
-      );
-      this.tags.set('topic_marketing', result.includes('topic_marketing'));
-      this.tags.set('topic_engineering', result.includes('topic_engineering'));
-      this.tags.set('topic_staff', result.includes('topic_staff'));
+
+      this.tags.forEach((tag) => {
+        tag.set('active', result.includes(tag.id));
+      });
+
     } catch (e) {}
   }
 
@@ -146,18 +138,19 @@ export default class SettingsController extends Controller {
     }
   }
 
-  @restartableTask
-  *updateDnd() {
+  updateDnd = restartableTask(async () => {
     if (this.dnd.get('start') && this.dnd.get('end')) {
-      yield timeout(500);
+      await timeout(500);
       try {
-        yield this.actito.updateDoNotDisturb({
+        await this.actito.updateDoNotDisturb({
           start: this.dnd.get('start'),
           end: this.dnd.get('end'),
         });
-      } catch (e) {}
+      } catch (e) {
+        console.error(`It was not possible to update the "Do not disturb" status:\n\n${e}`);
+      }
     }
-  }
+  })
 
   dismissAlert() {
     this.dismissTimeout = setTimeout(

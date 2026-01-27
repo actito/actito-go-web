@@ -1,10 +1,11 @@
 'use strict';
 
-const Funnel = require('broccoli-funnel');
-const MergeTrees = require('broccoli-merge-trees');
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const { compatBuild } = require('@embroider/compat');
 
-module.exports = function (defaults) {
+module.exports = async function (defaults) {
+  const { buildOnce } = await import('@embroider/vite');
+
   let app = new EmberApp(defaults, {
     fingerprint: {
       exclude: [
@@ -21,16 +22,21 @@ module.exports = function (defaults) {
     'ember-bootstrap': {
       bootstrapVersion: 5,
       importBootstrapCSS: false,
+      insertEmberWormholeElementToDom: false,
     },
-    'ember-simple-auth': {
-      useSessionSetupMethod: true,
+    babel: {
+      plugins: [
+        require.resolve('ember-concurrency/async-arrow-task-transform'),
+      ],
     },
-  });
-
-  let swTree = new Funnel('node_modules/actito-web/push/sw/dist', {
-    files: ['index.mjs'],
-    getDestinationPath() {
-      return 'sw.js';
+    emberData: {
+      deprecations: {
+        // New projects can safely leave this deprecation disabled.
+        // If upgrading, to opt-into the deprecated behavior, set this to true and then follow:
+        // https://deprecations.emberjs.com/id/ember-data-deprecate-store-extends-ember-object
+        // before upgrading to Ember Data 6.0
+        DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
+      },
     },
   });
 
@@ -51,5 +57,6 @@ module.exports = function (defaults) {
   );
   app.import('node_modules/@actito/web-push/dist/actito-push.css');
   app.import('node_modules/@actito/web-push-ui/dist/actito-push-ui.css');
-  return new MergeTrees([app.toTree(), swTree]);
+
+  return compatBuild(app, buildOnce);
 };

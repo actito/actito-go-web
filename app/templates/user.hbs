@@ -16,11 +16,9 @@
         <div class="ms-2 me-auto">
           {{field.label}}
         </div>
-        <XToggle
-          @theme="light"
-          @size="small"
+        <Switch
           @value={{field.value}}
-          @onToggle={{fn this.handleToggleUpdate field}}
+          @onChange={{fn this.handleToggleUpdate field}}
         />
       </li>
     {{else if (eq field.type "number")}}

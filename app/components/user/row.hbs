@@ -89,7 +89,7 @@
 
   </modal.body>
   <modal.footer>
-    <button class="btn btn-sm btn-secondary" type="button" {{action modal.close}}>{{t "components.user.modalUser.buttons.cancel"}}</button>
+    <button class="btn btn-sm btn-secondary" type="button" {{on "click" modal.close}}>{{t "components.user.modalUser.buttons.cancel"}}</button>
     <button {{on "click" this.registerDevice}} class="btn btn-sm btn-primary" type="button" disabled={{this.isProcessing}}>
       {{#if this.isProcessing}}<FaIcon @icon="circle-notch" @spin={{true}} @size="sm" />{{/if}}{{t "components.user.modalUser.buttons.create"}}
     </button>
