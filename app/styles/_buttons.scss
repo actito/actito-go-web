@@ -1,3 +1,6 @@
+@use "custom";
+@use "mixins";
+
 %basicbtn {
   outline: 0;
   text-transform: uppercase;
@@ -7,17 +10,17 @@
   border-width: 2px;
   padding: 1em 1.5em .9em 1.5em;
   line-height: 1em;
-  font-family: $font-family;
+  font-family: custom.$font-family;
   text-decoration: none;
   font-weight: bold;
   &:focus {
-    @include box-shadow(none !important);
+    @include mixins.box-shadow(none !important);
     text-decoration: none;
     border-style: solid !important;
     border-width: 2px !important;
   }
   &:hover{
-    @include box-shadow(none !important);
+    @include mixins.box-shadow(none !important);
     text-decoration: none;
     border-style: solid !important;
     border-width: 2px !important;

@@ -1,3 +1,6 @@
+@use "../bootstrap";
+@use "../mixins";
+
 .add-to-home{
   position: fixed;
   width: 100%;
@@ -5,24 +8,24 @@
   bottom: -20px;
   .banner{
     position: relative;
-    border: 5px solid $body-bg;
+    border: 5px solid bootstrap.$body-bg;
     padding: 10px 15px;
-    background: $body-bg;
+    background: bootstrap.$body-bg;
     max-width: 400px;
     width: 90vw;
     margin: 2em auto;
     text-align: center;
-    @include border-radius(10px);
+    @include mixins.border-radius(10px);
     &::before{
       content: '';
       position: absolute;
       display: block;
-      width: 0px;
+      width: 0;
       left: 50%;
       bottom: 0;
       border: 15px solid transparent;
       border-bottom: 0;
-      border-top: 15px solid $body-bg;
+      border-top: 15px solid bootstrap.$body-bg;
       transform: translate(-50%, calc(100% + 5px));
     }
     .text{
@@ -31,7 +34,7 @@
     }
     svg{
       width: 30px;
-      color: $body-color;
+      color: bootstrap.$body-color;
     }
     .close-button{
       position: absolute;
@@ -44,9 +47,9 @@
       height: 25px;
       font-weight: bold;
       font-size: 20px;
-      @include border-radius(100%);
-      background: $body-bg;
-      color: $body-color;
+      @include mixins.border-radius(100%);
+      background: bootstrap.$body-bg;
+      color: bootstrap.$body-color;
       line-height: 1;
       z-index: 1;
       cursor: pointer;
@@ -57,20 +60,20 @@
 }
 
 
-@include color-mode(dark) {
+@include bootstrap.color-mode(dark) {
   .add-to-home {
     .banner{
-      border: 5px solid $body-bg-dark;
-      background: $body-bg-dark;
+      border: 5px solid bootstrap.$body-bg-dark;
+      background: bootstrap.$body-bg-dark;
       &::before{
-        border-top: 15px solid $body-bg-dark;
+        border-top: 15px solid bootstrap.$body-bg-dark;
       }
       svg{
-        color: $body-color-dark;
+        color: bootstrap.$body-color-dark;
       }
       .close-button{
-        background: $body-bg-dark;
-        color: $body-color-dark;
+        background: bootstrap.$body-bg-dark;
+        color: bootstrap.$body-color-dark;
       }
     }
   }

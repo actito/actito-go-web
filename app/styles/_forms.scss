@@ -1,8 +1,11 @@
+@use "bootstrap";
+@use "custom";
+@use "mixins";
+
 label, .form-label{
   display: inline-block;
   line-height: 1;
-  color: theme-color("primary");
-  font-family: $font-family;
+  font-family: custom.$font-family;
   font-size: 16px;
   margin: 0.6rem 0 !important;
   font-weight: bold;
@@ -15,10 +18,10 @@ label, .form-label{
     top: 48px;
     right: 10px;
     .icon-error{
-      color: theme-color("danger-dark");
+      color: bootstrap.$danger-dark;
     }
     .icon-success{
-      color: theme-color("success-dark");
+      color: bootstrap.$success-dark;
     }
     &.no-label{
       top: 13px;
@@ -27,41 +30,25 @@ label, .form-label{
 }
 
 .form-control{
-  @include appearance(none !important);
-  @include border-radius(0 !important);
-  background: theme-color("field-bg-color") !important;
+  @include mixins.appearance(none !important);
+  @include mixins.border-radius(0 !important);
   width: 100%;
   height: 50px;
-  font-family: $font-family;
+  font-family: custom.$font-family;
   font-size: 16px !important;
   line-height: 1 !important;
-  border: 1px solid theme-color("field-bg-color") !important;
-  color: theme-color("field-color") !important;
   outline: 0;
   padding: 10px;
   resize: none;
-  @include box-shadow(none);
-  &:hover{
-    background: theme-color-level("field-bg-color", 1) !important;
-    &:read-only {
-      background-color: theme-color("field-bg-color") !important;
-    }
-  }
-  &:focus{
-    background: theme-color-level("field-bg-color", 1) !important;
-    &:read-only {
-      background-color: theme-color("field-bg-color") !important;
-    }
-  }
+  @include mixins.box-shadow(none);
   &:disabled{
-    background: theme-color("field-bg-color") !important;
     cursor: not-allowed !important;
   }
   &.form-control-lg{
     height: 60px;
     font-size: 20px !important;
     &.no-input{
-      padding: 20px 10px 0px 10px !important;
+      padding: 20px 10px 0 10px !important;
     }
   }
   &.form-control-sm{
@@ -69,18 +56,13 @@ label, .form-label{
     font-size: 12px !important;
   }
   &:focus {
-    @include box-shadow(none !important);
+    @include mixins.box-shadow(none !important);
   }
   &:read-only{
     &::placeholder {
       opacity: 0;
     }
   }
-
-  &::placeholder {
-    color: theme-color-level("field-color", -2) !important;
-  }
-
   &.conceal{
     text-security:disc;
     -webkit-text-security:disc;
@@ -100,16 +82,16 @@ label, .form-label{
 
 .input-error{
   .form-control, .ember-basic-dropdown-trigger, .upload-field, .editor-tinymce{
-    border: 1px solid theme-color("danger") !important;
+    border: 1px solid bootstrap.$danger !important;
   }
   .upload-drag-drop{
-    border: 4px dashed theme-color("danger") !important;
+    border: 4px dashed bootstrap.$danger !important;
   }
   .input-error-hint{
-    font-family: $font-family;
+    font-family: custom.$font-family;
     font-size: 14px;
     line-height: 1.5;
-    color: theme-color("danger");
+    color: bootstrap.$danger;
     margin: 0 !important;
     &:first-letter{
       text-transform: capitalize;
@@ -119,10 +101,10 @@ label, .form-label{
 
 .input-success{
   .input-success-hint{
-    font-family: $font-family;
+    font-family: custom.$font-family;
     font-size: 12px;
     line-height: 1.5;
-    color: theme-color("success");
+    color: bootstrap.$success;
     &:first-letter{
       text-transform: capitalize;
     }
@@ -132,15 +114,12 @@ label, .form-label{
 .input-group{
   .input-group-prepend, .input-group-append{
     .input-group-text{
-      @include border-radius(0 !important);
-      background: theme-color("field-bg-color") !important;
-      border: 1px solid theme-color("field-bg-color") !important;
-      @include box-shadow(none);
-      font-family: $font-family;
+      @include mixins.border-radius(0 !important);
+      @include mixins.box-shadow(none);
+      font-family: custom.$font-family;
       font-size: 16px !important;
       line-height: 1 !important;
       font-weight: bold;
-      color: theme-color("primary");
     }
     .btn{
       padding: 0.95em 1.5em 0.85em 1.5em !important;

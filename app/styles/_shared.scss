@@ -1,3 +1,6 @@
+@use "mixins";
+@use "bootstrap";
+
 #loader{
   width: 100vw;
   height: 100vh;
@@ -69,14 +72,14 @@
   font-weight: bold;
   font-size: 16px;
   border: none !important;
-  @include border-radius(100%);
+  @include mixins.border-radius(100%);
 }
 
 .input-field-width{
   width: 25% !important;
 }
 
-@include media-breakpoint-down(md) {
+@include bootstrap.media-breakpoint-down(md) {
   .main-content{
     padding-bottom: 60px;
   }

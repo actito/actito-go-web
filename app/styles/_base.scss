@@ -1,7 +1,9 @@
+@use "custom";
+
 body{
-  font-family: $font-family;
-  font-size: $default-font-size;
-  line-height: $default-line-height;
+  font-family: custom.$font-family;
+  font-size: custom.$default-font-size;
+  line-height: custom.$default-line-height;
   text-rendering: optimizeSpeed;
   font-smooth: always;
   font-smoothing: antialiased;
@@ -12,7 +14,7 @@ body{
 }
 
 %heading {
-  font-family: $font-family;
+  font-family: custom.$font-family;
   line-height: 1;
 }
 

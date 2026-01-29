@@ -1,3 +1,6 @@
+@use "../bootstrap";
+@use "../mixins";
+
 .inbox-row{
   padding: 15px;
   display: flex;
@@ -6,14 +9,14 @@
   .inbox-row-opened{
     width: 10px;
     height: 10px;
-    @include border-radius(100%);
+    @include mixins.border-radius(100%);
   }
   .inbox-row-attachment{
     max-width: 150px;
   }
 }
 
-@include media-breakpoint-down(md) {
+@include bootstrap.media-breakpoint-down(md) {
   .inbox-row{
     .inbox-row-attachment{
       max-width: 80px;

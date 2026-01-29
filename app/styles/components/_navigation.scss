@@ -1,3 +1,5 @@
+@use "../bootstrap" as bootstrap;
+
 .navigation{
   position: fixed;
   top: 0;
@@ -24,10 +26,10 @@
         font-size: 18px;
         padding: 5px 10px;
         margin-right: 10px;
-        color: $black;
+        color: bootstrap.$black;
         text-decoration: none;
         &:hover{
-          color: $gray-900;
+          color: bootstrap.$gray-900;
         }
         &.active{
           text-decoration: underline;
@@ -37,14 +39,14 @@
   }
 }
 
-@include color-mode(dark) {
+@include bootstrap.color-mode(dark) {
   .navigation {
     .nav-area{
       .buttons{
         .button{
-          color: $white;
+          color: bootstrap.$white;
           &:hover{
-            color: $gray-200;
+            color: bootstrap.$gray-200;
           }
         }
       }
@@ -52,7 +54,7 @@
   }
 }
 
-@include media-breakpoint-down(md) {
+@include bootstrap.media-breakpoint-down(md) {
   .navigation{
     height: 84px;
     .nav-area {

@@ -1,3 +1,6 @@
+@use "../bootstrap" as bootstrap;
+@use "../mixins";
+
 .user-row{
   display: flex;
   align-items: center;
@@ -6,7 +9,7 @@
   .user-row-image{
     width: 100px;
     height: 100px;
-    @include border-radius(100%);
+    @include mixins.border-radius(100%);
   }
 }
 
@@ -19,11 +22,11 @@
   .user-box-image{
     width: 200px;
     height: 200px;
-    @include border-radius(100%);
+    @include mixins.border-radius(100%);
   }
 }
 
-@include media-breakpoint-down(md) {
+@include bootstrap.media-breakpoint-down(md) {
   .anonymous{
     flex-direction: column;
     .btn{
