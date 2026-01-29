@@ -8,14 +8,17 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   img{
     max-width: 250px;
   }
+
   div{
     width: 250px;
     font-size: 18px;
     font-weight: bold;
-    &:after {
+
+    &::after {
       overflow: hidden;
       display: inline-block;
       vertical-align: bottom;
@@ -25,6 +28,7 @@
       width: 0;
     }
   }
+
   @keyframes ellipsis {
     to {
       width: 1.25em;
@@ -43,10 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   z-index: 1;
 }
 
@@ -72,6 +73,7 @@
   font-weight: bold;
   font-size: 16px;
   border: none !important;
+
   @include mixins.border-radius(100%);
 }
 
@@ -83,6 +85,7 @@
   .main-content{
     padding-bottom: 60px;
   }
+
   .input-field-width{
     width: 50% !important;
   }

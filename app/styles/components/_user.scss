@@ -6,9 +6,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px;
+
   .user-row-image{
     width: 100px;
     height: 100px;
+
     @include mixins.border-radius(100%);
   }
 }
@@ -19,9 +21,11 @@
   justify-content: center;
   flex-direction: column;
   padding: 15px;
+
   .user-box-image{
     width: 200px;
     height: 200px;
+
     @include mixins.border-radius(100%);
   }
 }
@@ -29,10 +33,12 @@
 @include bootstrap.media-breakpoint-down(md) {
   .anonymous{
     flex-direction: column;
+
     .btn{
       margin-top: 15px;
     }
   }
+
   .user-row{
     .user-row-image{
       width: 50px;

@@ -7,17 +7,21 @@
   right: 0;
   padding: 15px;
   z-index: 1;
+
   .nav-area{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .logo{
       width: 150px;
+
       img{
         max-width: 100%;
       }
     }
+
     .buttons{
       .button{
         position: relative;
@@ -28,9 +32,11 @@
         margin-right: 10px;
         color: bootstrap.$black;
         text-decoration: none;
+
         &:hover{
           color: bootstrap.$gray-900;
         }
+
         &.active{
           text-decoration: underline;
         }
@@ -45,6 +51,7 @@
       .buttons{
         .button{
           color: bootstrap.$white;
+
           &:hover{
             color: bootstrap.$gray-200;
           }
@@ -57,10 +64,12 @@
 @include bootstrap.media-breakpoint-down(md) {
   .navigation{
     height: 84px;
+
     .nav-area {
       .logo {
         width: 135px;
       }
+
       .buttons{
         .desktop{
           display: none;

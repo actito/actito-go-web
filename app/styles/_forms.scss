@@ -13,16 +13,20 @@ label, .form-label{
 
 .form-group{
   position: relative;
+
   .auxiliary-icon{
     position: absolute;
     top: 48px;
     right: 10px;
+
     .icon-error{
       color: bootstrap.$danger-dark;
     }
+
     .icon-success{
       color: bootstrap.$success-dark;
     }
+
     &.no-label{
       top: 13px;
     }
@@ -32,6 +36,7 @@ label, .form-label{
 .form-control{
   @include mixins.appearance(none !important);
   @include mixins.border-radius(0 !important);
+
   width: 100%;
   height: 50px;
   font-family: custom.$font-family;
@@ -40,33 +45,42 @@ label, .form-label{
   outline: 0;
   padding: 10px;
   resize: none;
+
   @include mixins.box-shadow(none);
+
   &:disabled{
     cursor: not-allowed !important;
   }
+
   &.form-control-lg{
     height: 60px;
     font-size: 20px !important;
+
     &.no-input{
-      padding: 20px 10px 0 10px !important;
+      padding: 20px 10px 0 !important;
     }
   }
+
   &.form-control-sm{
     height: 30px;
     font-size: 12px !important;
   }
+
   &:focus {
     @include mixins.box-shadow(none !important);
   }
+
   &:read-only{
     &::placeholder {
       opacity: 0;
     }
   }
+
   &.conceal{
     text-security:disc;
     -webkit-text-security:disc;
-    font-family: 'dotsfont';
+    font-family: dotsfont;
+
     &::placeholder {
       opacity: 0;
     }
@@ -75,6 +89,7 @@ label, .form-label{
   &.textarea{
     height: 200px !important;
   }
+
   &.textarea-sm{
     height: 100px !important;
   }
@@ -84,16 +99,19 @@ label, .form-label{
   .form-control, .ember-basic-dropdown-trigger, .upload-field, .editor-tinymce{
     border: 1px solid bootstrap.$danger !important;
   }
+
   .upload-drag-drop{
     border: 4px dashed bootstrap.$danger !important;
   }
+
   .input-error-hint{
     font-family: custom.$font-family;
     font-size: 14px;
     line-height: 1.5;
     color: bootstrap.$danger;
     margin: 0 !important;
-    &:first-letter{
+
+    &::first-letter{
       text-transform: capitalize;
     }
   }
@@ -105,7 +123,8 @@ label, .form-label{
     font-size: 12px;
     line-height: 1.5;
     color: bootstrap.$success;
-    &:first-letter{
+
+    &::first-letter{
       text-transform: capitalize;
     }
   }
@@ -116,15 +135,18 @@ label, .form-label{
     .input-group-text{
       @include mixins.border-radius(0 !important);
       @include mixins.box-shadow(none);
+
       font-family: custom.$font-family;
       font-size: 16px !important;
       line-height: 1 !important;
       font-weight: bold;
     }
+
     .btn{
-      padding: 0.95em 1.5em 0.85em 1.5em !important;
+      padding: 0.95em 1.5em 0.85em !important;
     }
   }
+
   .selector-generic, .selector-apps, .selector-countries, .selector-date, .selector-models, .selector-multiple, .selector-placeholders{
     position: relative;
     flex: 1 1 auto;

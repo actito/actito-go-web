@@ -9,9 +9,11 @@
     .buttons{
       .button{
         color: bootstrap.$white;
+
         &:hover{
           color: bootstrap.$gray-200;
         }
+
         &.active{
           background: bootstrap.$body-bg-dark;
         }
@@ -30,10 +32,12 @@
     right: 0;
     height: 60px;
     z-index: 1;
+
     .buttons{
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+
       .button{
         width: 33.3%;
         display: inline-block;
@@ -42,12 +46,15 @@
         text-decoration: none;
         text-align: center;
         padding: 8px 0;
+
         &:hover{
           color: bootstrap.$gray-900;
         }
+
         &.active{
           background: bootstrap.$body-bg;
         }
+
         .button-text{
           margin-top: 5px;
           font-size: 14px;

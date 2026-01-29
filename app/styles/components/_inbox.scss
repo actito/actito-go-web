@@ -6,11 +6,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
   .inbox-row-opened{
     width: 10px;
     height: 10px;
+
     @include mixins.border-radius(100%);
   }
+
   .inbox-row-attachment{
     max-width: 150px;
   }

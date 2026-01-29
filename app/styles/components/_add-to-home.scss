@@ -6,6 +6,7 @@
   width: 100%;
   z-index: 1500;
   bottom: -20px;
+
   .banner{
     position: relative;
     border: 5px solid bootstrap.$body-bg;
@@ -15,7 +16,9 @@
     width: 90vw;
     margin: 2em auto;
     text-align: center;
+
     @include mixins.border-radius(10px);
+
     &::before{
       content: '';
       position: absolute;
@@ -28,14 +31,17 @@
       border-top: 15px solid bootstrap.$body-bg;
       transform: translate(-50%, calc(100% + 5px));
     }
+
     .text{
       font-size: 14px;
       font-weight: 600;
     }
+
     svg{
       width: 30px;
       color: bootstrap.$body-color;
     }
+
     .close-button{
       position: absolute;
       top: -5px;
@@ -47,7 +53,9 @@
       height: 25px;
       font-weight: bold;
       font-size: 20px;
+
       @include mixins.border-radius(100%);
+
       background: bootstrap.$body-bg;
       color: bootstrap.$body-color;
       line-height: 1;
@@ -65,12 +73,15 @@
     .banner{
       border: 5px solid bootstrap.$body-bg-dark;
       background: bootstrap.$body-bg-dark;
+
       &::before{
         border-top: 15px solid bootstrap.$body-bg-dark;
       }
+
       svg{
         color: bootstrap.$body-color-dark;
       }
+
       .close-button{
         background: bootstrap.$body-bg-dark;
         color: bootstrap.$body-color-dark;

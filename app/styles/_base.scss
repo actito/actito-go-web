@@ -4,7 +4,7 @@ body{
   font-family: custom.$font-family;
   font-size: custom.$default-font-size;
   line-height: custom.$default-line-height;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
   font-smooth: always;
   font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -21,30 +21,35 @@ body{
 
 h1{
   @extend %heading;
+
   font-weight: bold;
   font-size: 36px;
 }
 
 h2{
   @extend %heading;
+
   font-weight: bold;
   font-size: 32px;
 }
 
 h3{
   @extend %heading;
+
   font-weight: bold;
   font-size: 28px;
 }
 
 h4{
   @extend %heading;
+
   font-weight: bold;
   font-size: 24px;
 }
 
 h5{
   @extend %heading;
+
   font-weight: bold;
   font-size: 20px;
 }
