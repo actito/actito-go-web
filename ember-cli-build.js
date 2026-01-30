@@ -38,6 +38,9 @@ module.exports = async function (defaults) {
         DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
       },
     },
+    sassOptions: {
+      quietDeps: true,
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

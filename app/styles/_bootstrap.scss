@@ -1,0 +1,36 @@
+// Default colors
+$primary: #0D6EFDFF;
+$secondary: #64706e;
+$success: #27b0a3;
+$info: #232c2a;
+$warning: #64706e;
+$danger: #e54142;
+$light: #f2f4f6;
+$dark: #232c2a;
+
+// Custom colors
+$success-dark: #10d1c4;
+$danger-dark: #cd1011;
+
+@forward "bootstrap/scss/bootstrap" with (
+  $primary: $primary,
+  $secondary: $secondary,
+  $success: $success,
+  $info: $info,
+  $warning: $warning,
+  $danger: $danger,
+  $light: $light,
+  $dark: $dark,
+  $theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+    "success-dark": $success-dark,
+    "danger-dark": $danger-dark,
+  )
+);

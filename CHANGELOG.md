@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Upcoming Release
+
+- Clean up incorrect style rules
+
 ## 2.0.3
 
 - Update `actito-web` to 5.0.0

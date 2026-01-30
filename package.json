@@ -15,7 +15,7 @@
     "format": "prettier . --cache --write",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
     "lint:styles": "stylelint \"**/*.{css,scss}\"",
-    "lint:styles:fix": "concurrently \"npm:lint:css -- --fix\"",
+    "lint:styles:fix": "concurrently \"npm:lint:styles -- --fix\"",
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\" --prefixColors auto && npm run format",
     "lint:intl": "ember-intl-lint",
     "lint:intl:fix": "ember-intl-lint --fix",

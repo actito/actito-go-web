@@ -1,9 +1,0 @@
-.x-toggle-container label{
-  margin: 0 !important;
-}
-.x-toggle-light.x-toggle-btn{
-  background: $gray-600 !important;
-}
-.x-toggle:checked + label > .x-toggle-light.x-toggle-btn{
-  background: $success !important;
-}
