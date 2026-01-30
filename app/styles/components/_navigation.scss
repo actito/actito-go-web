@@ -1,3 +1,5 @@
+@use "../bootstrap" as bootstrap;
+
 .navigation{
   position: fixed;
   top: 0;
@@ -5,17 +7,21 @@
   right: 0;
   padding: 15px;
   z-index: 1;
+
   .nav-area{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .logo{
       width: 150px;
+
       img{
         max-width: 100%;
       }
     }
+
     .buttons{
       .button{
         position: relative;
@@ -24,11 +30,13 @@
         font-size: 18px;
         padding: 5px 10px;
         margin-right: 10px;
-        color: $black;
+        color: bootstrap.$black;
         text-decoration: none;
+
         &:hover{
-          color: $gray-900;
+          color: bootstrap.$gray-900;
         }
+
         &.active{
           text-decoration: underline;
         }
@@ -37,14 +45,15 @@
   }
 }
 
-@include color-mode(dark) {
+@include bootstrap.color-mode(dark) {
   .navigation {
     .nav-area{
       .buttons{
         .button{
-          color: $white;
+          color: bootstrap.$white;
+
           &:hover{
-            color: $gray-200;
+            color: bootstrap.$gray-200;
           }
         }
       }
@@ -52,13 +61,15 @@
   }
 }
 
-@include media-breakpoint-down(md) {
+@include bootstrap.media-breakpoint-down(md) {
   .navigation{
     height: 84px;
+
     .nav-area {
       .logo {
         width: 135px;
       }
+
       .buttons{
         .desktop{
           display: none;
