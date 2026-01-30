@@ -6,7 +6,7 @@
     <img class="inbox-row-attachment me-1" src={{get (get @item.notification.attachments 0) "uri"}} alt="">
   {{/if}}
   <div class="ms-2 me-auto text-truncate">
-    <small class="mb-2 d-block">{{moment-format @item.time "MMMM Do YYYY HH:mm"}}</small>
+    <small class="mb-2 d-block">{{format-date @item.time format="fullWithTime"}}</small>
     {{#if @item.notification.title}}
       <h5>{{@item.notification.title}}</h5>
     {{/if}}
