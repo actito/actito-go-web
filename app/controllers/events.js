@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import { service } from '@ember/service';
 import EmberObject, { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { A } from '@ember/array';
 
 export default class EventsController extends Controller {
   @service constants;
@@ -22,7 +23,7 @@ export default class EventsController extends Controller {
       );
       await this.actito.logCustomEvent(this.eventName, data);
       this.name = null;
-      this.eventData = [];
+      this.eventData = A([]);
       this.isSuccess = true;
       this.dismissAlert();
     } catch (e) {
@@ -50,7 +51,7 @@ export default class EventsController extends Controller {
 
   onResetController() {
     this.name = null;
-    this.eventData = [];
+    this.eventData = A([]);
   }
 
   onControllerLoaded() {}
