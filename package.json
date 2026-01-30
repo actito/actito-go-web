@@ -1,6 +1,6 @@
 {
   "name": "actito-go-web",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "private": true,
   "description": "Actito's Go Web app",
   "repository": "https://github.com/Actito/actito-go-web",
