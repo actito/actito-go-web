@@ -1,13 +1,13 @@
-@use "../bootstrap" as bootstrap;
-@use "../mixins";
+@use '../bootstrap' as bootstrap;
+@use '../mixins';
 
-.user-row{
+.user-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
 
-  .user-row-image{
+  .user-row-image {
     width: 100px;
     height: 100px;
 
@@ -15,14 +15,14 @@
   }
 }
 
-.user-box{
+.user-box {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 15px;
 
-  .user-box-image{
+  .user-box-image {
     width: 200px;
     height: 200px;
 
@@ -31,16 +31,16 @@
 }
 
 @include bootstrap.media-breakpoint-down(md) {
-  .anonymous{
+  .anonymous {
     flex-direction: column;
 
-    .btn{
+    .btn {
       margin-top: 15px;
     }
   }
 
-  .user-row{
-    .user-row-image{
+  .user-row {
+    .user-row-image {
       width: 50px;
       height: 50px;
     }

@@ -1,13 +1,13 @@
-@use "../bootstrap";
-@use "../mixins";
+@use '../bootstrap';
+@use '../mixins';
 
-.add-to-home{
+.add-to-home {
   position: fixed;
   width: 100%;
   z-index: 1500;
   bottom: -20px;
 
-  .banner{
+  .banner {
     position: relative;
     border: 5px solid bootstrap.$body-bg;
     padding: 10px 15px;
@@ -19,7 +19,7 @@
 
     @include mixins.border-radius(10px);
 
-    &::before{
+    &::before {
       content: '';
       position: absolute;
       display: block;
@@ -32,17 +32,17 @@
       transform: translate(-50%, calc(100% + 5px));
     }
 
-    .text{
+    .text {
       font-size: 14px;
       font-weight: 600;
     }
 
-    svg{
+    svg {
       width: 30px;
       color: bootstrap.$body-color;
     }
 
-    .close-button{
+    .close-button {
       position: absolute;
       top: -5px;
       right: -5px;
@@ -67,22 +67,21 @@
   }
 }
 
-
 @include bootstrap.color-mode(dark) {
   .add-to-home {
-    .banner{
+    .banner {
       border: 5px solid bootstrap.$body-bg-dark;
       background: bootstrap.$body-bg-dark;
 
-      &::before{
+      &::before {
         border-top: 15px solid bootstrap.$body-bg-dark;
       }
 
-      svg{
+      svg {
         color: bootstrap.$body-color-dark;
       }
 
-      .close-button{
+      .close-button {
         background: bootstrap.$body-bg-dark;
         color: bootstrap.$body-color-dark;
       }

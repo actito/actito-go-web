@@ -40,7 +40,7 @@ export default class ApplicationRoute extends Route {
   }
 
   setupIntl() {
-    this.intl.addTranslations('en-us', translationsForEnUs)
+    this.intl.addTranslations('en-us', translationsForEnUs);
     this.intl.setFormats(formats);
     this.intl.setLocale(['en-us']);
   }

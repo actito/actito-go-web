@@ -1,4 +1,4 @@
-title: "User Profile"
+title: 'User Profile'
 userDataFields:
-  noData: "No fields found"
-unregister: "Unregister Profile"
+  noData: 'No fields found'
+unregister: 'Unregister Profile'

@@ -1,36 +1,36 @@
-@use "../bootstrap" as bootstrap;
+@use '../bootstrap' as bootstrap;
 
-.inbox-list-area{
+.inbox-list-area {
   position: relative;
 
-  .inbox-list-options{
+  .inbox-list-options {
     position: absolute;
     top: -30px;
     right: 0;
     z-index: 3;
 
-    .dropdown-toggle{
+    .dropdown-toggle {
       padding: 0 !important;
       font-size: 22px !important;
       background: transparent !important;
       color: bootstrap.$black;
       border: none !important;
 
-      &::after{
+      &::after {
         display: none;
       }
     }
 
-    .dropdown-menu{
+    .dropdown-menu {
       top: 30px;
       right: 0;
     }
   }
 
-  .inbox-list{
+  .inbox-list {
     position: relative;
 
-    .inbox-item{
+    .inbox-item {
       display: block;
       text-decoration: none;
       color: bootstrap.$black;
@@ -39,7 +39,7 @@
 }
 
 @include bootstrap.color-mode(dark) {
-  .inbox-list-area{
+  .inbox-list-area {
     .inbox-list-options {
       .dropdown-toggle {
         color: bootstrap.$white;
@@ -47,7 +47,7 @@
     }
 
     .inbox-list {
-      .inbox-item{
+      .inbox-item {
         color: bootstrap.$white;
       }
     }

@@ -24,8 +24,10 @@ export default class AddToHomeComponent extends Component {
   }
 
   get isPhoneOrTablet() {
-    return typeof navigator !== 'undefined' &&
-    navigator.userAgent.match(/ipad|iphone/i);
+    return (
+      typeof navigator !== 'undefined' &&
+      navigator.userAgent.match(/ipad|iphone/i)
+    );
   }
 
   get isEligible() {

@@ -19,7 +19,7 @@ export const formats = {
       hour: '2-digit',
       minute: '2-digit',
       hour12: false,
-    }
+    },
   },
   formatNumber: {
     compact: { notation: 'compact' },

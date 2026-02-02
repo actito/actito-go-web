@@ -52,12 +52,14 @@ export default class UserController extends Controller {
     }
   }
 
-  updateUserDataFields = restartableTask( async () => {
+  updateUserDataFields = restartableTask(async () => {
     await timeout(500);
     try {
       await this.actito.updateUserData(this.sanitizeOutputValues());
     } catch (e) {
-      console.error(`It was not possible to update the user data fields:\n\n${e}`);
+      console.error(
+        `It was not possible to update the user data fields:\n\n${e}`
+      );
     }
   });
 

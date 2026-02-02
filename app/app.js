@@ -3,11 +3,7 @@ import compatModules from '@embroider/virtual/compat-modules';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
-import {
-  importSync,
-  isDevelopingApp,
-  macroCondition
-} from '@embroider/macros';
+import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
 import setupInspector from '@embroider/legacy-inspector-support/ember-source-4.12';
 import './font-awesome';
 
@@ -18,7 +14,7 @@ if (macroCondition(isDevelopingApp())) {
 export default class App extends Application {
   ready() {
     document.getElementById('loader').remove();
-  };
+  }
 
   modulePrefix = config.modulePrefix;
   podModulePrefix = config.podModulePrefix;
