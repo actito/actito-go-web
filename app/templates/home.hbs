@@ -10,10 +10,11 @@
   @pauseOnMouseEnter={{true}}
   @showControls={{false}}
   @showIndicators={{false}}
-  as |car|>
+  as |car|
+>
   {{#each this.slides as |slide|}}
     <car.slide>
-      <img alt={{slide.alt}} src={{slide.src}} style="max-width: 100%;">
+      <img alt={{slide.alt}} src={{slide.src}} style="max-width: 100%;" />
     </car.slide>
   {{/each}}
 </BsCarousel>
@@ -26,21 +27,23 @@
   {{#each @model as |product|}}
     <div class="col-md-3">
       <LinkTo class="minimal-link" @route="products.detail" @model={{product}}>
-        <Product::Card
-          @product={{product}}
-        />
+        <Product::Card @product={{product}} />
       </LinkTo>
     </div>
   {{/each}}
 </div>
 <div class="text-end">
-  <LinkTo class="link-offset-2" @route="products.index">{{t "home.topProducts.link"}}</LinkTo>
+  <LinkTo class="link-offset-2" @route="products.index">
+    {{t "home.topProducts.link"}}
+  </LinkTo>
 </div>
 
 <div class="card bg-body-tertiary mt-5 mb-3">
   <div class="card-header">{{t "home.customEvents.title"}}</div>
   <div class="card-body">
     <p class="card-text">{{t "home.customEvents.text"}}</p>
-    <LinkTo @route="events" class="card-link link-offset-2">{{t "home.customEvents.link"}}</LinkTo>
+    <LinkTo @route="events" class="card-link link-offset-2">
+      {{t "home.customEvents.link"}}
+    </LinkTo>
   </div>
 </div>

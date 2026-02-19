@@ -12,7 +12,7 @@
 
 - Upgrade the app from Ember 4 to Ember 6 and update dependencies to their latest versions
 - Fix switch animations in the "Subscribe to topics" section
-- Update `actito-web` to 5.0.0-beta.3 
+- Update `actito-web` to 5.0.0-beta.3
 
 ## 2.0.1
 

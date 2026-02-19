@@ -40,7 +40,7 @@ module.exports = async function (defaults) {
     },
     sassOptions: {
       quietDeps: true,
-    }
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated

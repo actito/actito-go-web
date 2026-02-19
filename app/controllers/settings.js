@@ -102,7 +102,6 @@ export default class SettingsController extends Controller {
       this.tags.forEach((tag) => {
         tag.set('active', result.includes(tag.id));
       });
-
     } catch (e) {}
   }
 
@@ -147,10 +146,12 @@ export default class SettingsController extends Controller {
           end: this.dnd.get('end'),
         });
       } catch (e) {
-        console.error(`It was not possible to update the "Do not disturb" status:\n\n${e}`);
+        console.error(
+          `It was not possible to update the "Do not disturb" status:\n\n${e}`
+        );
       }
     }
-  })
+  });
 
   dismissAlert() {
     this.dismissTimeout = setTimeout(

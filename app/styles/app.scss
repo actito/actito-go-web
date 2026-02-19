@@ -1,25 +1,25 @@
-@use "bootstrap";
-@use "base";
-@use "custom";
-@use "mixins";
-@use "forms";
-@use "buttons";
-@use "animate";
-@use "shared";
+@use 'bootstrap';
+@use 'base';
+@use 'custom';
+@use 'mixins';
+@use 'forms';
+@use 'buttons';
+@use 'animate';
+@use 'shared';
 
-@use "resets/card";
+@use 'resets/card';
 
-@use "routes/error";
-@use "routes/restricted";
-@use "routes/unknown";
-@use "routes/inbox";
-@use "routes/products.detail";
+@use 'routes/error';
+@use 'routes/restricted';
+@use 'routes/unknown';
+@use 'routes/inbox';
+@use 'routes/products.detail';
 
-@use "components/navigation";
-@use "components/tabs";
-@use "components/cart";
-@use "components/product";
-@use "components/inbox" as components-inbox;
-@use "components/user";
-@use "components/add-to-home";
-@use "components/switch";
+@use 'components/navigation';
+@use 'components/tabs';
+@use 'components/cart';
+@use 'components/product';
+@use 'components/inbox' as components-inbox;
+@use 'components/user';
+@use 'components/add-to-home';
+@use 'components/switch';

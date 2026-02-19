@@ -1,5 +1,5 @@
 // Default colors
-$primary: #0D6EFDFF;
+$primary: #0d6efdff;
 $secondary: #64706e;
 $success: #27b0a3;
 $info: #232c2a;
@@ -12,7 +12,7 @@ $dark: #232c2a;
 $success-dark: #10d1c4;
 $danger-dark: #cd1011;
 
-@forward "bootstrap/scss/bootstrap" with (
+@forward 'bootstrap/scss/bootstrap' with (
   $primary: $primary,
   $secondary: $secondary,
   $success: $success,
@@ -22,15 +22,15 @@ $danger-dark: #cd1011;
   $light: $light,
   $dark: $dark,
   $theme-colors: (
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
-    "light": $light,
-    "dark": $dark,
-    "success-dark": $success-dark,
-    "danger-dark": $danger-dark,
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark,
+    'success-dark': $success-dark,
+    'danger-dark': $danger-dark,
   )
 );

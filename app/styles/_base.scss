@@ -1,6 +1,6 @@
-@use "custom";
+@use 'custom';
 
-body{
+body {
   font-family: custom.$font-family;
   font-size: custom.$default-font-size;
   line-height: custom.$default-line-height;
@@ -18,36 +18,35 @@ body{
   line-height: 1;
 }
 
-
-h1{
+h1 {
   @extend %heading;
 
   font-weight: bold;
   font-size: 36px;
 }
 
-h2{
+h2 {
   @extend %heading;
 
   font-weight: bold;
   font-size: 32px;
 }
 
-h3{
+h3 {
   @extend %heading;
 
   font-weight: bold;
   font-size: 28px;
 }
 
-h4{
+h4 {
   @extend %heading;
 
   font-weight: bold;
   font-size: 24px;
 }
 
-h5{
+h5 {
   @extend %heading;
 
   font-weight: bold;

@@ -1,27 +1,27 @@
-@use "../bootstrap";
-@use "../mixins";
+@use '../bootstrap';
+@use '../mixins';
 
-.inbox-row{
+.inbox-row {
   padding: 15px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
-  .inbox-row-opened{
+  .inbox-row-opened {
     width: 10px;
     height: 10px;
 
     @include mixins.border-radius(100%);
   }
 
-  .inbox-row-attachment{
+  .inbox-row-attachment {
     max-width: 150px;
   }
 }
 
 @include bootstrap.media-breakpoint-down(md) {
-  .inbox-row{
-    .inbox-row-attachment{
+  .inbox-row {
+    .inbox-row-attachment {
       max-width: 80px;
     }
   }

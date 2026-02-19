@@ -5,7 +5,7 @@
 Use the built-in custom events to create and experiment with automations! 🤖
 
 | Event                         | Description                                                       |
-|-------------------------------|-------------------------------------------------------------------|
+| ----------------------------- | ----------------------------------------------------------------- |
 | `page_viewed.home`            | Submitted when the home tab is displayed.                         |
 | `page_viewed.cart`            | Submitted when the cart tab is displayed.                         |
 | `page_viewed.settings`        | Submitted when the settings tab is displayed.                     |

@@ -5,4 +5,4 @@ export default {
     publicOnly: false,
     wrapTranslationsWithNamespace: true,
   },
-}
+};

@@ -1,20 +1,20 @@
-@use "../bootstrap" as bootstrap;
+@use '../bootstrap' as bootstrap;
 
-.tabs{
+.tabs {
   display: none;
 }
 
 @include bootstrap.color-mode(dark) {
   .tabs {
-    .buttons{
-      .button{
+    .buttons {
+      .button {
         color: bootstrap.$white;
 
-        &:hover{
+        &:hover {
           color: bootstrap.$gray-200;
         }
 
-        &.active{
+        &.active {
           background: bootstrap.$body-bg-dark;
         }
       }
@@ -22,9 +22,8 @@
   }
 }
 
-
 @include bootstrap.media-breakpoint-down(md) {
-  .tabs{
+  .tabs {
     display: block;
     position: fixed;
     bottom: 0;
@@ -33,12 +32,12 @@
     height: 60px;
     z-index: 1;
 
-    .buttons{
+    .buttons {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
 
-      .button{
+      .button {
         width: 33.3%;
         display: inline-block;
         color: bootstrap.$black;
@@ -47,15 +46,15 @@
         text-align: center;
         padding: 8px 0;
 
-        &:hover{
+        &:hover {
           color: bootstrap.$gray-900;
         }
 
-        &.active{
+        &.active {
           background: bootstrap.$body-bg;
         }
 
-        .button-text{
+        .button-text {
           margin-top: 5px;
           font-size: 14px;
         }

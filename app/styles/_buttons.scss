@@ -1,5 +1,5 @@
-@use "custom";
-@use "mixins";
+@use 'custom';
+@use 'mixins';
 
 %basicbtn {
   outline: 0;
@@ -8,7 +8,7 @@
   box-sizing: border-box;
   border-style: solid;
   border-width: 2px;
-  padding: 1em 1.5em .9em;
+  padding: 1em 1.5em 0.9em;
   line-height: 1em;
   font-family: custom.$font-family;
   text-decoration: none;
@@ -22,61 +22,59 @@
     border-width: 2px !important;
   }
 
-  &:hover{
+  &:hover {
     @include mixins.box-shadow(none !important);
 
     text-decoration: none;
     border-style: solid !important;
     border-width: 2px !important;
   }
-
 }
 
 %basicanim {
   position: relative;
   overflow: hidden;
   transform: translateZ(0);
-  transition: background-color .2s ease;
+  transition: background-color 0.2s ease;
 }
 
-.btn{
+.btn {
   @extend %basicbtn;
   @extend %basicanim;
 
-  &.btn-xs{
-    padding: .8em 1.3em .7em !important;
+  &.btn-xs {
+    padding: 0.8em 1.3em 0.7em !important;
     font-size: 12px;
 
-    &.icon-right{
-      padding: .9em .3em .8em 1.4em !important;
+    &.icon-right {
+      padding: 0.9em 0.3em 0.8em 1.4em !important;
     }
   }
 
-  &.btn-sm{
-    padding: .9em 1.4em .8em !important;
+  &.btn-sm {
+    padding: 0.9em 1.4em 0.8em !important;
     font-size: 14px;
 
-    &.icon-right{
-      padding: .9em .4em .8em 1.4em !important;
+    &.icon-right {
+      padding: 0.9em 0.4em 0.8em 1.4em !important;
     }
   }
 
-  &.btn-lg{
+  &.btn-lg {
     padding: 1.1em 1.6em 1em;
 
-    &.icon-right{
-      padding: .9em .6em .8em 1.4em !important;
+    &.icon-right {
+      padding: 0.9em 0.6em 0.8em 1.4em !important;
     }
   }
 
-  svg{
+  svg {
     margin-right: 10px;
   }
 
-  &.icon-right{
-    svg{
+  &.icon-right {
+    svg {
       margin-left: 10px;
     }
   }
-
 }

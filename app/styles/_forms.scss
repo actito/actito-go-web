@@ -1,8 +1,9 @@
-@use "bootstrap";
-@use "custom";
-@use "mixins";
+@use 'bootstrap';
+@use 'custom';
+@use 'mixins';
 
-label, .form-label{
+label,
+.form-label {
   display: inline-block;
   line-height: 1;
   font-family: custom.$font-family;
@@ -11,29 +12,29 @@ label, .form-label{
   font-weight: bold;
 }
 
-.form-group{
+.form-group {
   position: relative;
 
-  .auxiliary-icon{
+  .auxiliary-icon {
     position: absolute;
     top: 48px;
     right: 10px;
 
-    .icon-error{
+    .icon-error {
       color: bootstrap.$danger-dark;
     }
 
-    .icon-success{
+    .icon-success {
       color: bootstrap.$success-dark;
     }
 
-    &.no-label{
+    &.no-label {
       top: 13px;
     }
   }
 }
 
-.form-control{
+.form-control {
   @include mixins.appearance(none !important);
   @include mixins.border-radius(0 !important);
 
@@ -48,20 +49,20 @@ label, .form-label{
 
   @include mixins.box-shadow(none);
 
-  &:disabled{
+  &:disabled {
     cursor: not-allowed !important;
   }
 
-  &.form-control-lg{
+  &.form-control-lg {
     height: 60px;
     font-size: 20px !important;
 
-    &.no-input{
+    &.no-input {
       padding: 20px 10px 0 !important;
     }
   }
 
-  &.form-control-sm{
+  &.form-control-sm {
     height: 30px;
     font-size: 12px !important;
   }
@@ -70,15 +71,15 @@ label, .form-label{
     @include mixins.box-shadow(none !important);
   }
 
-  &:read-only{
+  &:read-only {
     &::placeholder {
       opacity: 0;
     }
   }
 
-  &.conceal{
-    text-security:disc;
-    -webkit-text-security:disc;
+  &.conceal {
+    text-security: disc;
+    -webkit-text-security: disc;
     font-family: dotsfont;
 
     &::placeholder {
@@ -86,53 +87,57 @@ label, .form-label{
     }
   }
 
-  &.textarea{
+  &.textarea {
     height: 200px !important;
   }
 
-  &.textarea-sm{
+  &.textarea-sm {
     height: 100px !important;
   }
 }
 
-.input-error{
-  .form-control, .ember-basic-dropdown-trigger, .upload-field, .editor-tinymce{
+.input-error {
+  .form-control,
+  .ember-basic-dropdown-trigger,
+  .upload-field,
+  .editor-tinymce {
     border: 1px solid bootstrap.$danger !important;
   }
 
-  .upload-drag-drop{
+  .upload-drag-drop {
     border: 4px dashed bootstrap.$danger !important;
   }
 
-  .input-error-hint{
+  .input-error-hint {
     font-family: custom.$font-family;
     font-size: 14px;
     line-height: 1.5;
     color: bootstrap.$danger;
     margin: 0 !important;
 
-    &::first-letter{
+    &::first-letter {
       text-transform: capitalize;
     }
   }
 }
 
-.input-success{
-  .input-success-hint{
+.input-success {
+  .input-success-hint {
     font-family: custom.$font-family;
     font-size: 12px;
     line-height: 1.5;
     color: bootstrap.$success;
 
-    &::first-letter{
+    &::first-letter {
       text-transform: capitalize;
     }
   }
 }
 
-.input-group{
-  .input-group-prepend, .input-group-append{
-    .input-group-text{
+.input-group {
+  .input-group-prepend,
+  .input-group-append {
+    .input-group-text {
       @include mixins.border-radius(0 !important);
       @include mixins.box-shadow(none);
 
@@ -142,12 +147,18 @@ label, .form-label{
       font-weight: bold;
     }
 
-    .btn{
+    .btn {
       padding: 0.95em 1.5em 0.85em !important;
     }
   }
 
-  .selector-generic, .selector-apps, .selector-countries, .selector-date, .selector-models, .selector-multiple, .selector-placeholders{
+  .selector-generic,
+  .selector-apps,
+  .selector-countries,
+  .selector-date,
+  .selector-models,
+  .selector-multiple,
+  .selector-placeholders {
     position: relative;
     flex: 1 1 auto;
     width: 1%;
@@ -155,5 +166,3 @@ label, .form-label{
     margin-bottom: 0;
   }
 }
-
-

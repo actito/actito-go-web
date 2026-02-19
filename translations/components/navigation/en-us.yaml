@@ -1,4 +1,4 @@
 buttons:
-  home: "Home"
-  products: "Products"
-  settings: "Settings"
+  home: 'Home'
+  products: 'Products'
+  settings: 'Settings'

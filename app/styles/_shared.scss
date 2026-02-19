@@ -1,7 +1,7 @@
-@use "mixins";
-@use "bootstrap";
+@use 'mixins';
+@use 'bootstrap';
 
-#loader{
+#loader {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -9,11 +9,11 @@
   justify-content: center;
   flex-direction: column;
 
-  img{
+  img {
     max-width: 250px;
   }
 
-  div{
+  div {
     width: 250px;
     font-size: 18px;
     font-weight: bold;
@@ -22,9 +22,9 @@
       overflow: hidden;
       display: inline-block;
       vertical-align: bottom;
-      -webkit-animation: ellipsis steps(4,end) 900ms infinite;
-      animation: ellipsis steps(4,end) 900ms infinite;
-      content: "\2026"; /* ascii code for the ellipsis character */
+      -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+      animation: ellipsis steps(4, end) 900ms infinite;
+      content: '\2026'; /* ascii code for the ellipsis character */
       width: 0;
     }
   }
@@ -42,7 +42,7 @@
   }
 }
 
-.loader{
+.loader {
   position: fixed;
   display: flex;
   align-items: center;
@@ -51,15 +51,15 @@
   z-index: 1;
 }
 
-.main-content{
+.main-content {
   padding-top: 84px;
 }
 
-.minimal-link{
+.minimal-link {
   text-decoration: none;
 }
 
-.remove-item{
+.remove-item {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -77,16 +77,16 @@
   @include mixins.border-radius(100%);
 }
 
-.input-field-width{
+.input-field-width {
   width: 25% !important;
 }
 
 @include bootstrap.media-breakpoint-down(md) {
-  .main-content{
+  .main-content {
     padding-bottom: 60px;
   }
 
-  .input-field-width{
+  .input-field-width {
     width: 50% !important;
   }
 }

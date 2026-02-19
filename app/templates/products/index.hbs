@@ -8,9 +8,7 @@
   {{#each @model as |product|}}
     <div class="col-md-4">
       <LinkTo class="minimal-link" @route="products.detail" @model={{product}}>
-        <Product::Card
-          @product={{product}}
-        />
+        <Product::Card @product={{product}} />
       </LinkTo>
     </div>
   {{/each}}

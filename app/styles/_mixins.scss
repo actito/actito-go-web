@@ -5,27 +5,27 @@
   border-radius: $radius;
 }
 
-@mixin box-shadow($shadow){
+@mixin box-shadow($shadow) {
   -moz-box-shadow: $shadow;
   -webkit-box-shadow: $shadow;
   box-shadow: $shadow;
 }
 
-@mixin transition($transition){
+@mixin transition($transition) {
   -webkit-transition: $transition;
   -moz-transition: $transition;
   -o-transition: $transition;
   transition: $transition;
 }
 
-@mixin transform($transform){
+@mixin transform($transform) {
   -webkit-transform: $transform;
   -moz-transform: $transform;
   -o-transform: $transform;
   transform: $transform;
 }
 
-@mixin filter($filter){
+@mixin filter($filter) {
   -webkit-filter: $filter;
   -moz-filter: $filter;
   -o-filter: $filter;
@@ -33,16 +33,16 @@
   filter: $filter;
 }
 
-@mixin calc-width($size, $percentage){
+@mixin calc-width($size, $percentage) {
   width: -webkit-calc(#{$size} - #{$percentage});
-  width:    -moz-calc(#{$size} - #{$percentage});
-  width:         calc(#{$size} - #{$percentage});
+  width: -moz-calc(#{$size} - #{$percentage});
+  width: calc(#{$size} - #{$percentage});
 }
 
-@mixin calc-height($size, $percentage){
+@mixin calc-height($size, $percentage) {
   height: -webkit-calc(#{$size} - #{$percentage});
-  height:    -moz-calc(#{$size} - #{$percentage});
-  height:         calc(#{$size} - #{$percentage});
+  height: -moz-calc(#{$size} - #{$percentage});
+  height: calc(#{$size} - #{$percentage});
 }
 
 @mixin linear-gradient($start, $end) {
@@ -53,13 +53,13 @@
   background: linear-gradient($start, $end); /* Standard syntax */
 }
 
-@mixin appearance($appearance){
+@mixin appearance($appearance) {
   -webkit-appearance: $appearance;
   -moz-appearance: $appearance;
   appearance: $appearance;
 }
 
-@mixin animation-fill-mode($animation-fill-mode){
+@mixin animation-fill-mode($animation-fill-mode) {
   -webkit-animation-fill-mode: $animation-fill-mode;
   -moz-animation-fill-mode: $animation-fill-mode;
   animation-fill-mode: $animation-fill-mode;
